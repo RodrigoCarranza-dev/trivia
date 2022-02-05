@@ -1,0 +1,262 @@
+/*Al reducir demasiado el height de la ventana del navegador, desaparece el título y una parte de la 
+tarjeta. No pude arreglarlo. Feedback, de cómo arreglarlo, por fa:(*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #320210;  
+    
+}
+.screen{
+    background-color: #320210;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.main-container{
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.76);
+    border-radius: 10px;
+    width: 80vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    min-width: 280px;
+}
+.title{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 150px;
+}
+#logo{
+    height: 90px;
+    width: 90px;
+    border: 3px solid #F8BB55;
+    margin-top: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
+    /*margin: 0 5vw;*/
+}
+h2{
+    color: #F8BB55;
+    text-shadow: 0px 0px 15px rgba(7, 7, 7, 0.589);
+    text-align: center;
+    font-size: 50px;
+
+}
+.cards-container{
+    display: flex;
+    flex-flow: row wrap;  
+    justify-content: space-around;
+    width: 90%;
+    margin-top: 10px;
+    min-height: 400px;
+}
+/*Para asegurar el contenido, las tarjetas no seran responsive*/
+.card{
+    height: 50vh;
+    width: 30vw;
+    min-width: 260px;
+    min-height: 260px;
+    margin-bottom: 11px;
+    margin-top: 25px;
+}
+.top{
+    height: 90px;
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+}
+h3{
+    color: white;
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+}
+.card-container{
+    height: 27vh;
+    background-color: rgb(255, 235, 235);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 225px;
+    min-width: 180px;
+}
+.options{
+    height: 90%;
+    width: 90%;
+   /* border: 1px solid black;*/
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.btn{
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 99%;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: right;
+    padding: 5px;
+    cursor: pointer;
+}
+.circle-option{
+    border: 1px solid rgb(88, 41, 14);
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgb(219, 206, 206);
+    transition: all 0.2s;
+}
+.op-txt{
+    font-size: calc(12px + 0.3vw);
+    cursor: pointer;
+    
+}
+label{
+  cursor: pointer;
+}
+.vis{
+    visibility: hidden;
+}
+.right{
+  background-color: rgb(45, 243, 45);
+}
+.right:hover{
+  background-color: green;
+}
+.wrong{
+  background-color: rgb(231, 4, 4);
+}
+.wrong:hover{
+  background-color: rgb(136, 4, 4);
+}
+/*timer*/
+.base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-top: 30px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(36, 143, 54);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: aliceblue;
+}
+/*resultado*/
+.contenedor{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+}
+.resultado{
+  background-color: #320210;
+  width: 90%;
+  height: 90%;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+#puntuacion{
+  color: white;
+  text-align: justify;
+}
+#nota{
+  color: white;
+  text-align: justify;
+  font-size: 60px;
+}
+button{
+  margin-top: 30px;
+  width: 150px;
+  height: 30px;
+  font-weight: bolder;
+}
+button:hover{
+  cursor: pointer;
+}
